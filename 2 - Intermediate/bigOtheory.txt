@@ -1,0 +1,48 @@
+Big O Notation / Algorithm Efficiency / Big O asymptotic analysis
+
+NOTE: If you sometimes have a small input size, then readibility can take precendence over speed (Bogo?)
+
+NOTE: Worst case is usually the real Big O
+
+Important when determining if an algorithm will scale to larger datasets
+
+What is the runtime with respect to the input
+Note: multiple runtime functions require you add both efficiencies
+Note: Each for loop would be run with respect to its own n,
+	so 2 for loops operating at O(n) would be O(2n) but we can drop the constants
+Note: Different inputs would use different holding variables
+
+RUNTIME = TIME IT TAKES TO EXECUTE A CERTAIN PIECE OF CODE!
+TIME COMPLEXITY = A WAY OF SHOWING HOW THE RUNTIME OF A FUNCTION INCREASES AS THE SIZE OF THE INPUT INCREASES.
+Eg:
+o	Constant time	  O(1)
+o	Logarithmic time  O(log n) faster and faster for every next step it takes (opposite of exp)
+o	Linear time       O(n) - n is number of elements in the array
+o	Quadratic time	  O(n^2)
+o	Polynomial time	  O(n^k)
+o	Exponential time  O(2^n)
+o	
+
+The time it takes to run a function is T
+T =  an + b
+n is the number of elements in the array, or size of inputs
+and a and b are constants
+
+Linear scaling is O(n)
+
+o	when you go through each element one by one
+
+O(n^2)
+
+o	when you go throught each element, number of element number of time
+
+Scaling by product - O(a*b)
+
+o	when you multiply 2 different constants to determine the efficiency because you are running through all the elements in each array
+
+O(n log (n))
+o	Slower than O(n)/linear but reasonably faster than n^2, especially faster for large datasets
+
+Drop non-dominant terms
+
+o	so if one portion is O(n) and the other is O(n^2), we can drop O(n) because O(n^2) is the dominant value in this answer

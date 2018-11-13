@@ -2,8 +2,8 @@
 
 echo "---SCRIPT ACTIVATED---"
 python HqTriviaSplit.py 
-cd ../../..
-cd Downloads
+# cd ../../..
+# cd Downloads
 
 tesseract croppedQuestion.jpg OCR1
 cat OCR1.txt > FullQuestion.txt
@@ -20,6 +20,6 @@ echo ''
 python FullQuestionQuery.py 
 #cat FullQuestion.txt
 
-cd ..
-cd Documents/Python-Concepts/3\ -\ Advanced/
+#cd ..
+#cd Documents/Python-Concepts/3\ -\ Advanced/
 

@@ -34,7 +34,7 @@ def generateBoard():
 				# Every 10 Squares, start a new line and print the remaining squares on
 				# the next line until we reach another 10 and start a new line again
 				if counter % 10 == 0:
-					print('\n')
+					print("\n")
 					sideCounter = sideCounter + 1
 					print(sideCounter, end="", flush=True)
 					if sideCounter > 9:
@@ -46,46 +46,46 @@ def generateBoard():
 				counter = counter + 1
 	
 	# Print the legend on the board to help the user learn what the symbols represent
-	print('\n\n         ------------------------------')	
+	print("\n\n         ------------------------------")	
 	print("                     Legend:")
 	print("             □ = Unshot Board Target")
 	print("             ▀ = Missed Shot")
 	print("             X = Successful-Shot")
-	print('         ------------------------------')
+	print("         ------------------------------")
 
 def firstCheck(x,y,ship,route):
 	"""Determine the coordinates of the ships to make sure its placed entirely on the board"""
 	for i in range(0,ship):
 		if ship == 5:
 			carrierLocation.append([x,y])
-			if route == 'x_plus':	x = x + 1 # X-val assigned in increasing order - vertical
-			if route == 'x_minus':	x = x - 1 # X-val assigned in descending order - vertical
-			if route == 'y_plus':	y = y + 1 # Y-val assigned in increasing order - horizontal
-			if route == 'y_minus':	y = y - 1 # Y-val assigned in decreasing order - horizontal
+			if route == "x_plus":	x = x + 1 # X-val assigned in increasing order - vertical
+			if route == "x_minus":	x = x - 1 # X-val assigned in descending order - vertical
+			if route == "y_plus":	y = y + 1 # Y-val assigned in increasing order - horizontal
+			if route == "y_minus":	y = y - 1 # Y-val assigned in decreasing order - horizontal
 		elif ship == 4:
 			battleShipLocation.append([x,y])
-			if route == 'x_plus':	x = x + 1
-			if route == 'x_minus':	x = x - 1
-			if route == 'y_plus':	y = y + 1
-			if route == 'y_minus':	y = y - 1
+			if route == "x_plus":	x = x + 1
+			if route == "x_minus":	x = x - 1
+			if route == "y_plus":	y = y + 1
+			if route == "y_minus":	y = y - 1
 		elif ship == 3 and len(cruiserLocation) < 3 :
 			cruiserLocation.append([x,y])
-			if route == 'x_plus':	x = x + 1
-			if route == 'x_minus':	x = x - 1
-			if route == 'y_plus':	y = y + 1
-			if route == 'y_minus':	y = y - 1
+			if route == "x_plus":	x = x + 1
+			if route == "x_minus":	x = x - 1
+			if route == "y_plus":	y = y + 1
+			if route == "y_minus":	y = y - 1
 		elif ship == 3:
 			submarineLocation.append([x,y])
-			if route == 'x_plus':	x = x + 1
-			if route == 'x_minus':	x = x - 1
-			if route == 'y_plus':	y = y + 1
-			if route == 'y_minus':	y = y - 1
+			if route == "x_plus":	x = x + 1
+			if route == "x_minus":	x = x - 1
+			if route == "y_plus":	y = y + 1
+			if route == "y_minus":	y = y - 1
 		elif ship == 2:
 			destroyerLocation.append([x,y])
-			if route == 'x_plus': 	x = x + 1
-			if route == 'x_minus':	x = x - 1
-			if route == 'y_plus':	y = y + 1
-			if route == 'y_minus':	y = y - 1
+			if route == "x_plus":	x = x + 1
+			if route == "x_minus":	x = x - 1
+			if route == "y_plus":	y = y + 1
+			if route == "y_minus":	y = y - 1
 
 def addShipToCoordinatePool(shipLocation, ship, version):
 	"""Append the coordinates of the ships to a list with all the coordinates"""
@@ -136,17 +136,17 @@ def placeShip(x, y, ship, model):
 		"""There will be a 50% chance that the ship will be placed either"""
 		"""vertically or horizontally"""
 		if(x + ship > 9):
-			route = 'x_minus'
+			route = "x_minus"
 			firstCheck(x,y,ship,route)
 		else:
-			route = 'x_plus'
+			route = "x_plus"
 			firstCheck(x,y,ship,route)
 	else:
 		if(y + ship > 9):
-			route = 'y_minus'
+			route = "y_minus"
 			firstCheck(x,y,ship,route)
 		else:
-			route = 'y_plus'
+			route = "y_plus"
 			firstCheck(x,y,ship,route)
 
 	# Once the chosen ship has its coordinates in its list, we now must check what the 
@@ -186,7 +186,7 @@ def didItHit(x):
 	var2 = var2 - 1
 
 	# Assume any coordinate ending in '0' is 10
-	if target[-1] == '0':
+	if target[-1] == "0":
 		var2 = 9
 		
 	# Append the coordinates corresponding to the users target, to the pastTarget array
